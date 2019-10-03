@@ -16,7 +16,7 @@ app.use(Express.static('public'));
 
 var database, collection;
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
         if(error) {
             throw error;
